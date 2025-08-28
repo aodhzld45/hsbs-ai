@@ -8,7 +8,7 @@
 ### Backend
 cd backend
 source venv/Scripts/activate
-uvicorn main:app --reload --port 8001
+uvicorn app.main:app --reload --port 8001
 
 ### Frontend
 cd frontend
