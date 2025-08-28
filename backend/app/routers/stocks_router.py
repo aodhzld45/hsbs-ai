@@ -1,7 +1,7 @@
 # 종목 CRUD (JWT 필요)
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from typing import List
+from typing import Optional,List
 
 from ..deps import get_db, get_current_user_id
 from ..models import Stock

@@ -1,6 +1,6 @@
 # Pydantic 스키마
 from pydantic import BaseModel, EmailStr, Field
-from typing import List
+from typing import Optional, List
 
 class HealthOut(BaseModel):
     ok: bool = True
@@ -24,4 +24,15 @@ class StockOut(BaseModel):
     id: int
     symbol: str
     name: str
+    market: Optional[str] = None
+    sector: Optional[str] = None
+    tags: Optional[str] = None
+    use_tf: str
+    del_tf: str
     class Config: from_attributes = True
+    
+class Page(BaseModel):
+    total: int
+    page: int
+    size: int
+    items: List[StockOut]
